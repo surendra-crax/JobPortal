@@ -34,7 +34,12 @@ const JobCard = ({
   description,
 }: JobCardProps) => {
   return (
-    <Card shadow="xl" padding="lg" radius="md" className="bg-white w-full border">
+    <Card
+      shadow="xl"
+      padding="lg"
+      radius="md"
+      className="bg-white w-full border"
+    >
       {/* Logo & Time Badge */}
       <Group justify="space-between" mb="sm">
         <Avatar src={logo} size="lg" radius="xl" />
@@ -49,23 +54,26 @@ const JobCard = ({
       </Text>
 
       {/* Job Details */}
-      <Group spacing="xs" className="text-gray-500 text-xs">
-        <Group spacing={3}>
+      <Group gap="xs" className="text-gray-500 text-xs">
+        <Group gap={3}>
           <IconBriefcase size={14} className="text-gray-500" />
           <Text size="sm">{experience}</Text>
         </Group>
-        <Group spacing={3}>
+        <Group gap={3}>
           <IconMapPin size={14} className="text-gray-500" />
           <Text size="sm">{location}</Text>
         </Group>
-        <Group spacing={3}>
+        <Group gap={3}>
           <IconCurrencyDollar size={14} className="text-gray-500" />
           <Text size="sm">{salary}</Text>
         </Group>
       </Group>
 
       {/* Job Description */}
-      <ul className="mt-1 text-gray-500 list-disc list-inside" style={{ fontSize: "0.75rem" }}>
+      <ul
+        className="mt-1 text-gray-500 list-disc list-inside"
+        style={{ fontSize: "0.75rem" }}
+      >
         {description.map((point, index) => (
           <li key={index}>{point}</li>
         ))}
@@ -135,12 +143,8 @@ const JobList = () => {
   return (
     <div className="flex justify-center px-4 mt-12">
       <SimpleGrid
-        cols={4}
+        cols={{ base: 1, sm: 2, lg: 4 }} // Responsive column control
         spacing="lg"
-        breakpoints={[
-          { maxWidth: "lg", cols: 2 },
-          { maxWidth: "md", cols: 1 },
-        ]}
       >
         {jobs.map((job, index) => (
           <JobCard key={index} {...job} />
