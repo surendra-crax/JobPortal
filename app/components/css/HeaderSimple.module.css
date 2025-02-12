@@ -1,0 +1,43 @@
+.header {
+    width: 890px;
+    height: 80px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    background-color: var(--mantine-color-body);
+    border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    border-radius: 122px;
+    border-width: 1px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); /* Evenly spread shadow in all directions */
+}
+
+  
+  .inner {
+    height: 80px; /* Updated height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Optional padding for better alignment */
+  }
+  
+  .link {
+    display: block;
+    line-height: 1;
+    padding: 8px 25px;
+    border-radius: var(--mantine-radius-sm);
+    text-decoration: none;
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+    font-size: var(--mantine-font-size-sm);
+    font-weight: 500;
+    border-radius: 122px; /* Matching the header’s border-radius */
+    border-width: 1px;
+  
+    @mixin hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    }
+  
+    [data-mantine-color-scheme] &[data-active] {
+      background-color: var(--mantine-color-white);
+      color: var(--mantine-color-black);
+    }
+  }
+  
